@@ -5,23 +5,32 @@ services:
     build: ./user-service
     ports:
       - "8001:8000"
+    depends_on:
+      - mongo
 
   product-service:
     build: ./product-service
     ports:
       - "8002:8000"
+    depends_on:
+      - mongo
 
   cart-order-service:
     build: ./cart-order-service
     ports:
       - "8003:8000"
+    depends_on:
+      - mongo
 
   delivery-service:
     build: ./delivery-service
     ports:
       - "8004:8000"
+    depends_on:
+      - mongo
 
   mongo:
     image: mongo:6
+    container_name: mongo
     ports:
       - "27017:27017"
