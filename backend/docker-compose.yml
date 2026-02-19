@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+  user-service:
+    build: ./user-service
+    ports:
+      - "8001:8000"
+
+  product-service:
+    build: ./product-service
+    ports:
+      - "8002:8000"
+
+  cart-order-service:
+    build: ./cart-order-service
+    ports:
+      - "8003:8000"
+
+  delivery-service:
+    build: ./delivery-service
+    ports:
+      - "8004:8000"
+
+  mongo:
+    image: mongo:6
+    ports:
+      - "27017:27017"
