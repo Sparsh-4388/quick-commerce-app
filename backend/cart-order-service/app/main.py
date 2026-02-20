@@ -1,7 +1,11 @@
 from fastapi import FastAPI
+from app.routes import cart, order
 
-app = FastAPI(title="Cart Order Service")
+app = FastAPI()
 
-@app.get("health")
-def health():
-    return {"status": "Cart Order service running"}
+app.include_router(cart.router, prefix="/cart", tags=["Cart"])
+app.include_router(order.router, prefix="/order", tags=["Order"])
+
+@app.get("/")
+def root():
+    return {"message": "Cart-Order Service Running"}
