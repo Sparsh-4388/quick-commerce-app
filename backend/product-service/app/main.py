@@ -1,7 +1,6 @@
 from fastapi import FastAPI
+from app.routes.products import router as product_router
 
 app = FastAPI(title="Product Service")
 
-@app.get("health")
-def health():
-    return {"status": "product service running"}
+app.include_router(product_router)
