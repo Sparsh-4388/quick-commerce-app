@@ -1,6 +1,11 @@
 from fastapi import FastAPI
-from app.routes.products import router as product_router
+from app.routes import products
+from app.seeds import seed_products
 
-app = FastAPI(title="Product Service")
+app = FastAPI()
 
-app.include_router(product_router)
+@app.on_event("startup")
+def startup_event():
+    seed_products()
+
+app.include_router(products.router)

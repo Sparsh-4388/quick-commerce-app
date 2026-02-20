@@ -1,41 +1,36 @@
+# app/seeds.py
+
 from app.database import db
+from datetime import datetime
 
+def seed_products():
+    products_collection = db["products"]
 
-def seed():
-    db.products.delete_many({})
-
-    db.products.insert_many([
+    products = [
         {
             "product_id": "p001",
-            "name": "Fresh Milk",
-            "description": "1L full cream milk",
-            "price": 55,
+            "name": "Milk",
+            "description": "Fresh dairy milk",
+            "price": 50,
             "category": "Dairy",
             "image_url": "https://via.placeholder.com/150",
-            "available": True
+            "available": True,
+            "created_at": datetime.utcnow()
         },
         {
             "product_id": "p002",
-            "name": "Bananas",
-            "description": "1 dozen bananas",
-            "price": 40,
-            "category": "Fruits",
-            "image_url": "https://via.placeholder.com/150",
-            "available": True
-        },
-        {
-            "product_id": "p003",
-            "name": "Potato Chips",
-            "description": "200g salted chips",
+            "name": "Bread",
+            "description": "Whole wheat bread",
             "price": 30,
-            "category": "Snacks",
+            "category": "Bakery",
             "image_url": "https://via.placeholder.com/150",
-            "available": True
+            "available": True,
+            "created_at": datetime.utcnow()
         }
-    ])
+    ]
 
-    print("Seeded successfully!")
-
-
-if __name__ == "__main__":
-    seed()
+    if products_collection.count_documents({}) == 0:
+        products_collection.insert_many(products)
+        print("Products seeded successfully.")
+    else:
+        print("Products already exist. Skipping seeding.")
