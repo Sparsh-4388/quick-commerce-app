@@ -77,9 +77,9 @@ class _CartScreenState extends State<CartScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF5F5F5),
+      backgroundColor: const Color(0xFFFFF3E0),
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: const Color(0xFFFFB347),
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Color(0xFF1A1A1A)),
@@ -87,7 +87,7 @@ class _CartScreenState extends State<CartScreen> {
         ),
         title: const Text('My Cart',
           style: TextStyle(
-            color: Color(0xFF1A1A1A), fontWeight: FontWeight.w700)),
+            color: Color(0xFFfb542b), fontWeight: FontWeight.w700)),
       ),
       body: _loading
         ? const Center(child: CircularProgressIndicator(color: Color(0xFF0C831F)))
@@ -99,7 +99,7 @@ class _CartScreenState extends State<CartScreen> {
                 Expanded(
                   child: RefreshIndicator(
                     onRefresh: _loadCart,
-                    color: const Color(0xFF0C831F),
+                    color: const Color(0xFFFFCCBC),
                     child: ListView.separated(
                       padding: const EdgeInsets.all(16),
                       itemCount: _cartItems.length,
@@ -114,7 +114,7 @@ class _CartScreenState extends State<CartScreen> {
 
                 // Order summary + button
                 Container(
-                  color: Colors.white,
+                  color: const Color(0xFFFFD180),
                   padding: const EdgeInsets.fromLTRB(16, 16, 16, 28),
                   child: Column(
                     children: [
@@ -122,10 +122,10 @@ class _CartScreenState extends State<CartScreen> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           const Text('Items',
-                            style: TextStyle(color: Colors.grey, fontSize: 14)),
+                            style: TextStyle(color: const Color(0xFFfb542b), fontSize: 14)),
                           Text('${_cartItems.length}',
                             style: const TextStyle(
-                              fontWeight: FontWeight.w600, fontSize: 14)),
+                              color: const Color(0xFFfb542b), fontWeight: FontWeight.w600, fontSize: 14)),
                         ],
                       ),
                       const SizedBox(height: 6),
@@ -134,11 +134,11 @@ class _CartScreenState extends State<CartScreen> {
                         children: [
                           const Text('Total',
                             style: TextStyle(
-                              fontWeight: FontWeight.w700, fontSize: 16)),
+                              color: const Color(0xFFfb542b), fontWeight: FontWeight.w700, fontSize: 16)),
                           Text('₹${_total.toStringAsFixed(2)}',
                             style: const TextStyle(
                               fontWeight: FontWeight.w800, fontSize: 18,
-                              color: Color(0xFF0C831F))),
+                              color: Color(0xFFfb542b))),
                         ],
                       ),
                       const SizedBox(height: 12),
@@ -146,7 +146,7 @@ class _CartScreenState extends State<CartScreen> {
                         width: double.infinity, height: 50,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xFF0C831F),
+                            backgroundColor: const Color(0xFFFF8C42),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12)),
                           ),
@@ -174,18 +174,18 @@ class _CartScreenState extends State<CartScreen> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Icon(Icons.shopping_cart_outlined,
-          size: 80, color: Colors.grey.shade300),
+          size: 80, color: const Color(0xFFFF8C42)),
         const SizedBox(height: 16),
         const Text('Your cart is empty',
           style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600,
-            color: Colors.grey)),
+            color: const Color(0xFFFF9F1C))),
         const SizedBox(height: 8),
         const Text('Add items to get started',
-          style: TextStyle(color: Colors.grey)),
+          style: TextStyle(color: const Color(0xFFFF9F1C))),
         const SizedBox(height: 24),
         ElevatedButton(
           style: ElevatedButton.styleFrom(
-            backgroundColor: const Color(0xFF0C831F),
+            backgroundColor: const Color(0xFFFF8C42),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10)),
           ),
@@ -214,7 +214,7 @@ class _CartItemTile extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(14),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: const Color(0xFFFFc870),
         borderRadius: BorderRadius.circular(12),
       ),
       child: Row(
@@ -222,7 +222,7 @@ class _CartItemTile extends StatelessWidget {
           Container(
             width: 50, height: 50,
             decoration: BoxDecoration(
-              color: Colors.grey.shade100,
+              color: const Color(0xFFFFECB3),
               borderRadius: BorderRadius.circular(8),
             ),
             child: const Icon(Icons.shopping_bag_outlined,

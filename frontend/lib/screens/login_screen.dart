@@ -44,7 +44,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: const Color(0xFFFFF3E0),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(24),
@@ -58,7 +58,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Container(
                   width: 72, height: 72,
                   decoration: BoxDecoration(
-                    color: const Color(0xFF0C831F),
+                    color: const Color(0xFFFF8C42),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: const Icon(Icons.bolt, color: Colors.white, size: 40),
@@ -69,14 +69,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Text('blinkit',
                   style: TextStyle(
                     fontSize: 28, fontWeight: FontWeight.w800,
-                    color: Color(0xFF0C831F), letterSpacing: -0.5,
+                    color: Color(0xFFFF9F1C), letterSpacing: -0.5,
                   ),
                 ),
               ),
               const SizedBox(height: 8),
               const Center(
                 child: Text('Grocery in minutes',
-                  style: TextStyle(color: Colors.grey, fontSize: 14),
+                  style: TextStyle(color: const Color(0xFFFFD180), fontSize: 14),
                 ),
               ),
 
@@ -112,7 +112,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 50,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF0C831F),
+                    backgroundColor: const Color(0xFFfb542b),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12)),
                   ),
@@ -123,7 +123,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           color: Colors.white, strokeWidth: 2.5))
                     : const Text('Login',
                         style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600,
-                          color: Colors.white)),
+                          color: const Color(0xFFFF9F1C))),
                 ),
               ),
 

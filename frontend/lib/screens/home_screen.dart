@@ -52,7 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(ok ? '${product['name']} added to cart!' : 'Failed to add item'),
-        backgroundColor: ok ? const Color(0xFF0C831F) : Colors.red,
+        backgroundColor: ok ? const Color(0xFFfb542b) : Colors.red,
         duration: const Duration(seconds: 1),
       ),
     );
@@ -61,17 +61,17 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF5F5F5),
+      backgroundColor: const Color(0xFFFFF3E0), // warm cream background
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: const Color(0xFFFFB347), 
         elevation: 0,
         title: Row(
           children: [
-            const Icon(Icons.bolt, color: Color(0xFF0C831F), size: 24),
+            const Icon(Icons.bolt, color: Color(0xFFfb542b), size: 24),
             const SizedBox(width: 6),
             const Text('blinkit',
               style: TextStyle(
-                color: Color(0xFF0C831F), fontSize: 22,
+                color: Color(0xFFfb542b), fontSize: 22,
                 fontWeight: FontWeight.w800, letterSpacing: -0.5)),
             const SizedBox(width: 8),
             const Icon(Icons.location_on, color: Colors.grey, size: 16),
@@ -81,7 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         actions: [
           IconButton(
-            icon: const Icon(Icons.shopping_cart_outlined, color: Color(0xFF1A1A1A)),
+            icon: const Icon(Icons.shopping_cart_outlined, color: Color(0xFF000000)),
             onPressed: () => Navigator.push(context,
               MaterialPageRoute(
                 builder: (_) => CartScreen(
@@ -90,9 +90,9 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       body: _loading
-        ? const Center(child: CircularProgressIndicator(color: Color(0xFF0C831F)))
+        ? const Center(child: CircularProgressIndicator(color: Color(0xFFfb542b)))
         : RefreshIndicator(
-            color: const Color(0xFF0C831F),
+            color: const Color(0xFFfb542b),
             onRefresh: _loadData,
             child: CustomScrollView(
               slivers: [
@@ -165,7 +165,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget _buildSearchBar() {
     return Container(
-      color: Colors.white,
+      color: const Color(0xFFFFB347),
       padding: const EdgeInsets.fromLTRB(16, 8, 16, 12),
       child: Container(
         height: 44,
@@ -188,7 +188,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget _buildCategoryBar() {
     return Container(
-      color: Colors.white,
+      color: const Color(0xFFFFF3E0), // warm orange category bar
       height: 50,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
@@ -204,7 +204,7 @@ class _HomeScreenState extends State<HomeScreen> {
               duration: const Duration(milliseconds: 200),
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
               decoration: BoxDecoration(
-                color: sel ? const Color(0xFF0C831F) : Colors.grey.shade100,
+                color: sel ? const Color(0xFFFF8C42) : Colors.white.withOpacity(0.7),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Text(cat,
@@ -245,11 +245,11 @@ class _ProductCard extends StatelessWidget {
       onTap: onTap,
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: const Color(0xFFFFFBF5), // warm white card
           borderRadius: BorderRadius.circular(12),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.05),
+              color: Colors.orange.withOpacity(0.08),
               blurRadius: 6, offset: const Offset(0, 2)),
           ],
         ),
@@ -287,14 +287,14 @@ class _ProductCard extends StatelessWidget {
                       Text('₹$price',
                         style: const TextStyle(
                           fontWeight: FontWeight.w700,
-                          fontSize: 14, color: Color(0xFF0C831F))),
+                          fontSize: 14, color: Color(0xFFfb542b))), // orange price
                       if (available)
                         GestureDetector(
                           onTap: onAddToCart,
                           child: Container(
                             width: 28, height: 28,
                             decoration: BoxDecoration(
-                              color: const Color(0xFF0C831F),
+                              color: const Color(0xFFfb542b), // orange add button
                               borderRadius: BorderRadius.circular(6),
                             ),
                             child: const Icon(Icons.add,
@@ -316,9 +316,9 @@ class _ProductCard extends StatelessWidget {
   }
 
   Widget _placeholder() => Container(
-    color: Colors.grey.shade100,
+    color: const Color(0xFFFFECCC), // warm placeholder
     child: const Center(
       child: Icon(Icons.image_not_supported_outlined,
-        color: Colors.grey, size: 40)),
+        color: Colors.orange, size: 40)),
   );
 }

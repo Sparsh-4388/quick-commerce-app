@@ -68,7 +68,7 @@ class _SignupScreenState extends State<SignupScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: const Color(0xFFFFF3E0),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(24),
@@ -81,7 +81,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 child: Container(
                   width: 72, height: 72,
                   decoration: BoxDecoration(
-                    color: const Color(0xFF0C831F),
+                    color: const Color(0xFFFF8C42),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: const Icon(Icons.bolt, color: Colors.white, size: 40),
@@ -92,7 +92,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 child: Text('Create Account',
                   style: TextStyle(
                     fontSize: 24, fontWeight: FontWeight.w800,
-                    color: Color(0xFF1A1A1A)),
+                    color: Color(0xFFFFE0B2)),
                 ),
               ),
               const SizedBox(height: 4),
@@ -136,7 +136,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 height: 50,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF0C831F),
+                    backgroundColor: const Color(0xFFfb542b),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12)),
                   ),
@@ -147,7 +147,7 @@ class _SignupScreenState extends State<SignupScreen> {
                           color: Colors.white, strokeWidth: 2.5))
                     : const Text('Sign Up',
                         style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600,
-                          color: Colors.white)),
+                          color: const Color(0xFFFF9F1C))),
                 ),
               ),
 

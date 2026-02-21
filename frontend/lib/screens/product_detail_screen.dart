@@ -47,9 +47,9 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
     final available = p['available'] as bool? ?? true;
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: const Color(0xFFFFF3E0),
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: const Color(0xFFFFB347),
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Color(0xFF1A1A1A)),
@@ -73,7 +73,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                 children: [
                   Container(
                     height: 280, width: double.infinity,
-                    color: Colors.grey.shade50,
+                    color: const Color(0xFFF0FFF4),
                     child: imageUrl != null && imageUrl.isNotEmpty
                       ? Image.network(imageUrl, fit: BoxFit.contain,
                           errorBuilder: (_, __, ___) => const Center(
@@ -92,31 +92,31 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                           Container(
                             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                             decoration: BoxDecoration(
-                              color: const Color(0xFF0C831F).withOpacity(0.1),
+                              color: const Color(0xFFFFD180).withOpacity(0.2),
                               borderRadius: BorderRadius.circular(6),
                             ),
                             child: Text(category,
                               style: const TextStyle(
-                                color: Color(0xFF0C831F),
+                                color: Color(0xFFFF9F1C),
                                 fontSize: 12, fontWeight: FontWeight.w600)),
                           ),
                         const SizedBox(height: 12),
                         Text(name, style: const TextStyle(
                           fontSize: 22, fontWeight: FontWeight.w700,
-                          color: Color(0xFF1A1A1A))),
+                          color: Color(0xFFfb542b))),
                         const SizedBox(height: 8),
                         Text('₹$price', style: const TextStyle(
                           fontSize: 24, fontWeight: FontWeight.w800,
-                          color: Color(0xFF0C831F))),
+                          color: Color(0xFFFF9F1C))),
                         const SizedBox(height: 20),
                         const Divider(),
                         const SizedBox(height: 12),
                         const Text('About this product', style: TextStyle(
                           fontSize: 15, fontWeight: FontWeight.w700,
-                          color: Color(0xFF1A1A1A))),
+                          color: Color(0xFFFF9F1C))),
                         const SizedBox(height: 8),
                         Text(desc, style: const TextStyle(
-                          fontSize: 14, color: Colors.grey, height: 1.5)),
+                          fontSize: 14, color: const Color(0xFFFF9F1C), height: 1.5)),
                       ],
                     ),
                   ),
@@ -128,7 +128,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
             Container(
               padding: const EdgeInsets.fromLTRB(16, 12, 16, 24),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: const Color(0xFFFFF0D9),
                 boxShadow: [BoxShadow(
                   color: Colors.black.withOpacity(0.08),
                   blurRadius: 10, offset: const Offset(0, -4))],
@@ -137,7 +137,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                 children: [
                   Container(
                     decoration: BoxDecoration(
-                      border: Border.all(color: const Color(0xFF0C831F)),
+                      border: Border.all(color: const Color(0xFFFF9F1C)),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Row(
@@ -147,7 +147,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                           child: Container(width: 36, height: 36,
                             alignment: Alignment.center,
                             child: const Icon(Icons.remove, size: 18,
-                              color: Color(0xFF0C831F))),
+                              color: Color(0xFFFF9F1C))),
                         ),
                         SizedBox(width: 36,
                           child: Center(child: Text('$_quantity',
@@ -158,7 +158,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                           child: Container(width: 36, height: 36,
                             alignment: Alignment.center,
                             child: const Icon(Icons.add, size: 18,
-                              color: Color(0xFF0C831F))),
+                              color: Color(0xFFFF9F1C))),
                         ),
                       ],
                     ),
@@ -169,7 +169,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                       height: 48,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color(0xFF0C831F),
+                          backgroundColor: const Color(0xFFFF9F1C),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
                         ),
@@ -177,11 +177,11 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                         child: _adding
                           ? const SizedBox(width: 20, height: 20,
                               child: CircularProgressIndicator(
-                                color: Colors.white, strokeWidth: 2))
+                                color: const Color(0xFFFF9F1C), strokeWidth: 2))
                           : const Text('Add to Cart',
                               style: TextStyle(fontSize: 15,
                                 fontWeight: FontWeight.w700,
-                                color: Colors.white)),
+                                color: const Color(0xFFFFF0D9))),
                       ),
                     ),
                   ),
