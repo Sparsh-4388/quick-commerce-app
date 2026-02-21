@@ -5,37 +5,26 @@ services:
     build: ./user-service
     ports:
       - "8001:8000"
-    depends_on:
-      - mongo
+    env_file:
+      - ./user-service/.env
 
   product-service:
     build: ./product-service
     ports:
       - "8002:8000"
-    depends_on:
-      - mongo
+    env_file:
+      - ./product-service/.env
 
   cart-order-service:
     build: ./cart-order-service
     ports:
       - "8003:8000"
-    depends_on:
-      - mongo
+    env_file:
+      - ./cart-order-service/.env
 
   delivery-service:
     build: ./delivery-service
     ports:
       - "8004:8000"
-    depends_on:
-      - mongo
-
-  mongo:
-    image: mongo:6
-    container_name: mongo
-    ports:
-      - "27017:27017"
-    volumes:
-      - mongo-data:/data/db
-
-volumes:
-  mongo-data:
+    env_file:
+      - ./delivery-service/.env
