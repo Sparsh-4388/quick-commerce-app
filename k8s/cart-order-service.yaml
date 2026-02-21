@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cart-order-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cart-order-service
+  template:
+    metadata:
+      labels:
+        app: cart-order-service
+    spec:
+      containers:
+        - name: cart-order-service
+          image: cart-order-service:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8000
+          env:
+            - name: MONGO_URL
+              value: "mongodb://mongodb:27017"
+            - name: DB_NAME
+              value: "cartdb"
+            - name: PRODUCT_SERVICE_URL
+              value: "http://product-service:8000/products"
+            - name: DELIVERY_SERVICE_URL
+              value: "http://delivery-service:8000/delivery/create"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cart-order-service
+spec:
+  selector:
+    app: cart-order-service
+  type: NodePort
+  ports:
+    - port: 8000
+      targetPort: 8000
+      nodePort: 30003          # accessible at minikube-ip:30003
