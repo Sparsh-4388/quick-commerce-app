@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../services/api_service.dart';
 import 'cart_screen.dart';
+import 'order_screens.dart';
 import 'product_detail_screen.dart' show ProductDetailScreen;
 
 class HomeScreen extends StatefulWidget {
@@ -85,6 +86,13 @@ class _HomeScreenState extends State<HomeScreen> {
             onPressed: () => Navigator.push(context,
               MaterialPageRoute(
                 builder: (_) => CartScreen(
+                  userId: widget.userId, token: widget.token))),
+          ),
+          IconButton(
+            icon: const Icon(Icons.shopping_bag_outlined, color: Color(0xFF000000)),
+            onPressed: () => Navigator.push(context,
+              MaterialPageRoute(
+                builder: (_) => OrdersScreen(
                   userId: widget.userId, token: widget.token))),
           ),
         ],

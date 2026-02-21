@@ -17,7 +17,7 @@ class OrderConfirmationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final total = orderData['total'] ?? orderData['order_total'];
+    final total = orderData['total_amount'] ?? orderData['total'];
 
     return Scaffold(
       backgroundColor: Colors.white,
